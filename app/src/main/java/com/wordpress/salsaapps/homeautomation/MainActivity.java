@@ -1,5 +1,6 @@
 package com.wordpress.salsaapps.homeautomation;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -45,12 +47,24 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id) {
+            case R.id.action_settings:
+                Toast.makeText(this, "Settings not yet implemented", Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case R.id.hide_actionbar:
+                Toast.makeText(this, "Action Bar Hidden", Toast.LENGTH_SHORT)
+                        .show();
+                android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+                actionBar.hide();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                break;
+            default:
+                break;
         }
+        return true;
 
-        return super.onOptionsItemSelected(item);
+
+
     }
 }
