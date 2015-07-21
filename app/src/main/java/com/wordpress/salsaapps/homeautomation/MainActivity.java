@@ -28,8 +28,8 @@ public class MainActivity extends ActionBarActivity {
 
     public void mainLightOff(View view)
     {
-        String onUrl = "http://192.168.1.178/arduino/digital/13/0";
-        Intent launchUrl = new Intent(Intent.ACTION_VIEW, Uri.parse(onUrl));
+        String offUrl = "http://192.168.1.178/arduino/digital/13/0";
+        Intent launchUrl = new Intent(Intent.ACTION_VIEW, Uri.parse(offUrl));
         startActivity(launchUrl);
     }
 
